@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Alert from '../Components/Alert';
 import Spinner from '../Components/Spinner';
-import logo from '../logo.svg';
+import logo from '../../public/logo.png';
 import { getResetPasswordLinkDev } from '../redux/action/DeveloperAction';
 
 const ForgotPassword = () => {

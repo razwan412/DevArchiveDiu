@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Formik } from 'formik';
-import logo from '../logo.svg';
+import logo from '../../public/logo.png';
 import MyTextField from '../Components/MyTextField';
 import * as yup from 'yup';
 import { devSignin } from '../redux/action/DeveloperAction';

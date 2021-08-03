@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../logo.svg';
+import logo from '../../public/logo.png';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import MyTextField from '../Components/MyTextField';
