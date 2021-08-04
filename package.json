@@ -1,7 +1,7 @@
 {
-  "name": "dev-forum",
+  "name": "dev-forum-diu",
   "version": "1.0.0",
-  "description": "BD Dev Forum server",
+  "description": "DIU Dev Forum server",
   "main": "index.js",
   "type": "module",
   "scripts": {
