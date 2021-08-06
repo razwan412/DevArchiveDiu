@@ -60,8 +60,7 @@ const CreateArticleScreen = () => {
                   <Editor
                   style={{backgroundColor: 'transparent'}}
                     id='article_body'
-                    apiKey={process.env.TINY_MCE_KEY}
-                    initialValue='Write...'                    
+                    apiKey={process.env.TINY_MCE_KEY}                    
                     init={{
                       height: 500,
                       menubar: true,                      
