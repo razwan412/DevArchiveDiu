@@ -44,14 +44,12 @@ app.use(corsWithOptions);
 const server = http.createServer(app);
 export const io = new Server(server, {
   cors: {
-     origin: [
+    origin: [
       'http://localhost:5000',
       'http://localhost:3000',
       'https://devarchivediu.netlify.app',
       'https://devarchivediu.vercel.app/',
       'https://devarchivediu-i9bz8j499-razwan412.vercel.app/',
-       'https://devarchivediu.vercel.app',
-       '*',
     ],
     methods: ['GET', 'POST'],
     credentials: true,
@@ -154,6 +152,19 @@ app.use(
 app.use(notFound);
 app.use(errorHandler);
 
+const io = require("socket.io")(server, {
+  cors: {
+    origin: [
+      'http://localhost:5000',
+      'http://localhost:3000',
+      'https://devarchivediu.netlify.app',
+      'https://devarchivediu.vercel.app/',
+      'https://devarchivediu-i9bz8j499-razwan412.vercel.app/',
+      '*',
+    ],
+    methods: ["GET", "POST"]
+  }
+});
 
 
 
@@ -161,10 +172,4 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
-});
-
-const io = require('socket.io')(server, {
-  cors: {
-    origin: '*',
-  }
 });
