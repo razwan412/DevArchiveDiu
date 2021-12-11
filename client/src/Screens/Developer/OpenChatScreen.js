@@ -7,7 +7,7 @@ import Loader from '../../Components/Loader';
 import { io } from 'socket.io-client';
 import { deleteChat } from '../../redux/action/DeveloperAction';
 
-const socket = io('https://devarchivediu.herokuapp.com');
+const socket = io('https://devarchivediu-i9bz8j499-razwan412.vercel.app');
 
 const OpenChatScreen = ({ recruiter }) => {
   const bottomListRef = useRef();

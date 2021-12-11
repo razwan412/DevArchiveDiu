@@ -22,6 +22,8 @@ import recruiterRoutes from './routes/RecruiterRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 import { addUser, getUser } from './socket/chat.js';
 
+
+
 dotenv.config();
 connectDB();
 
@@ -30,6 +32,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // set cors preflight options
+// const corsOptions ={
+//   origin:'http://localhost:3000', 
+//   credentials:true,            //access-control-allow-credentials:true
+//   optionSuccessStatus:200
+// }
+// app.use(cors(corsOptions));
 app.options('*', cors());
 app.use(corsWithOptions);
 
@@ -40,6 +48,8 @@ export const io = new Server(server, {
       'http://localhost:5000',
       'http://localhost:3000',
       'https://devarchivediu.netlify.app',
+      'https://devarchivediu.vercel.app/',
+      'https://devarchivediu-i9bz8j499-razwan412.vercel.app/',
     ],
     methods: ['GET', 'POST'],
     credentials: true,
@@ -142,8 +152,17 @@ app.use(
 app.use(notFound);
 app.use(errorHandler);
 
+
+
+
 // Server listening
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
+});
+
+const io = require('socket.io')(server, {
+  cors: {
+    origin: '*',
+  }
 });
